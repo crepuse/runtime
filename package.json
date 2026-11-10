@@ -1,26 +1,34 @@
-
 {
-  "name": "@crepuse/runtime",
-  "version": "0.0.0",
-  "description": "Core runtime abstractions for CREPUSE",
-  "type": "module",
-  "license": "AGPL-3.0-only",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "name": "@crepuse/runtime",
+    "version": "0.0.0",
+    "description": "Core runtime abstractions for CREPUSE",
+    "type": "module",
+    "license": "AGPL-3.0-only",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./errors": {
+            "types": "./dist/errors/index.d.ts",
+            "import": "./dist/errors/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "check": "tsc --noEmit",
+        "prepack": "npm run build",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "prettier": "^3.9.10",
+        "typescript": "^5.9.0"
     }
-  },
-  "files": ["dist"],
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "check": "tsc --noEmit",
-    "prepack": "npm run build"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.0"
-  }
 }
