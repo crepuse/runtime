@@ -22,7 +22,8 @@
         "check": "tsc --noEmit",
         "prepack": "npm run build",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "test": "npm run build && node --test"
     },
     "publishConfig": {
         "access": "public"
