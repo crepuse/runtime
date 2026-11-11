@@ -46,3 +46,17 @@ test("enriches invalid parameter errors", () => {
 test("supports empty parameters", () => {
     assert.deepEqual(normalizeSqliteParams([], "test.empty"), []);
 });
+
+test("rejects sparse parameter arrays", () => {
+    const params = ["alice", "bob"];
+    delete params[1];
+
+    assert.throws(() => normalizeSqliteParams(params, "test.sparse"), {
+        code: "DATABASE_INVALID_STATEMENT",
+        detail: {
+            statement: "test.sparse",
+            field: "params",
+            index: 1,
+        },
+    });
+});

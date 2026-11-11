@@ -11,7 +11,7 @@ export function normalizeSqliteParams(
         });
     }
 
-    return params.map((value, index): SqliteBoundValue => {
+    return Array.from(params, (value, index): SqliteBoundValue => {
         if (value === null || typeof value === "string") {
             return value;
         }
