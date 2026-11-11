@@ -12,6 +12,10 @@
         "./errors": {
             "types": "./dist/errors/index.d.ts",
             "import": "./dist/errors/index.js"
+        },
+        "./database": {
+            "types": "./dist/database/index.d.ts",
+            "import": "./dist/database/index.js"
         }
     },
     "files": [
