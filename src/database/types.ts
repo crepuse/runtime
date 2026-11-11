@@ -8,7 +8,7 @@ export interface CrepuseExpectation {
 export interface CrepuseStatement<TRow = unknown, TRows extends TRow[] = TRow[], TParam = unknown> {
     name: string;
     sql: string;
-    params: TParam;
+    params: TParam[];
     expect?: CrepuseExpectation;
 }
 
