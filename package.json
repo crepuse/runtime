@@ -12,6 +12,10 @@
         "./errors": {
             "types": "./dist/errors/index.d.ts",
             "import": "./dist/errors/index.js"
+        },
+        "./database": {
+            "types": "./dist/database/index.d.ts",
+            "import": "./dist/database/index.js"
         }
     },
     "files": [
@@ -22,7 +26,8 @@
         "check": "tsc --noEmit",
         "prepack": "npm run build",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format:check": "prettier --check .",
+        "test": "npm run build && node --test"
     },
     "publishConfig": {
         "access": "public"
