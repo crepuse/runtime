@@ -1,6 +1,6 @@
 {
     "name": "@crepuse/runtime",
-    "version": "0.0.0",
+    "version": "0.1.0-rc.1",
     "description": "Core runtime abstractions for CREPUSE",
     "type": "module",
     "license": "AGPL-3.0-only",
@@ -39,6 +39,10 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crepuse/runtime.git"
     },
     "devDependencies": {
         "prettier": "^3.9.10",
