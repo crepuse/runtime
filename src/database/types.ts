@@ -18,9 +18,9 @@ export interface CrepuseResult<TRows extends unknown[] = unknown[]> {
 }
 
 export interface CrepuseDatabase<TParam = unknown> {
-    run<TRow = unknown, TRows extends TRow[] = TRow[]>(
-        statement: CrepuseStatement<TRow, TRows, TParam>,
-    ): Promise<CrepuseResult<TRows>>;
+    run(statement: CrepuseStatement<unknown, unknown[], TParam>): Promise<CrepuseResult>;
+
+    query<TRow = unknown>(statement: CrepuseStatement<TRow, TRow[], TParam>): Promise<TRow[]>;
 
     batch(
         statements: readonly CrepuseStatement<unknown, unknown[], TParam>[],
