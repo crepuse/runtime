@@ -20,6 +20,10 @@
         "./database/sqlite": {
             "types": "./dist/database/sqlite/index.d.ts",
             "import": "./dist/database/sqlite/index.js"
+        },
+        "./database/sqlite/d1": {
+            "types": "./dist/database/sqlite/d1/index.d.ts",
+            "import": "./dist/database/sqlite/d1/index.js"
         }
     },
     "files": [
