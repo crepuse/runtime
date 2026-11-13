@@ -1,26 +1,51 @@
-
 {
-  "name": "@crepuse/runtime",
-  "version": "0.0.0",
-  "description": "Core runtime abstractions for CREPUSE",
-  "type": "module",
-  "license": "AGPL-3.0-only",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "name": "@crepuse/runtime",
+    "version": "0.1.0",
+    "description": "Core runtime abstractions for CREPUSE",
+    "type": "module",
+    "license": "AGPL-3.0-only",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        },
+        "./errors": {
+            "types": "./dist/errors/index.d.ts",
+            "import": "./dist/errors/index.js"
+        },
+        "./database": {
+            "types": "./dist/database/index.d.ts",
+            "import": "./dist/database/index.js"
+        },
+        "./database/sqlite": {
+            "types": "./dist/database/sqlite/index.d.ts",
+            "import": "./dist/database/sqlite/index.js"
+        },
+        "./database/sqlite/d1": {
+            "types": "./dist/database/sqlite/d1/index.d.ts",
+            "import": "./dist/database/sqlite/d1/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "check": "tsc --noEmit",
+        "prepack": "npm run build",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "test": "npm run build && node --test"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crepuse/runtime.git"
+    },
+    "devDependencies": {
+        "prettier": "^3.9.10",
+        "typescript": "^5.9.0"
     }
-  },
-  "files": ["dist"],
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "check": "tsc --noEmit",
-    "prepack": "npm run build"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.0"
-  }
 }
