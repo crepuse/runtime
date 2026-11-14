@@ -225,3 +225,4 @@ try {
 crepuse provides concrete database adapter implementations for different runtime environments:
 
 - [Cloudflare D1 Adapter Documentation](./adapters/d1.md): Designed for Cloudflare Workers / Pages edge environments.
+- [Node SQLite Adapter Documentation](./adapters/node.md): Designed for Node.js native SQLite (`node:sqlite`) environments.
