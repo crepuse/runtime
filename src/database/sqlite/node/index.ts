@@ -69,7 +69,10 @@ export function createNodeSqliteDatabase(database: NodeSqliteLike): CrepuseSqlit
                     changes = readCount(directChanges);
                 }
             } else {
-                changes = prepared.run(...params).changes;
+                const before = readCount(totalChanges);
+                const result = prepared.run(...params);
+
+                changes = readCount(totalChanges) !== before ? result.changes : 0;
             }
         } catch (cause) {
             throw databaseError(DatabaseErrorCode.ExecutionFailed, {
