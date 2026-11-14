@@ -18,13 +18,14 @@ npm install @crepuse/runtime
 
 This package supports subpath exports, allowing specific modules to be loaded on demand:
 
-| Export Path                           | Description                   | Key Exports                                                                                                                                     |
-| :------------------------------------ | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `@crepuse/runtime`                    | Root export                   | Re-exports all public APIs from `errors` and `database`                                                                                         |
-| `@crepuse/runtime/errors`             | Error handling system         | `RuntimeError`, `RuntimeErrorOptions`                                                                                                           |
-| `@crepuse/runtime/database`           | Core database abstractions    | `CrepuseDatabase`, `CrepuseStatement`, `CrepuseResult`, `CrepuseExpectation`, `DatabaseErrorCode`, `validateExpectations`, `assertExpectations` |
-| `@crepuse/runtime/database/sqlite`    | SQLite extensions & utilities | `SqliteValue`, `SqliteBoundValue`, `CrepuseSqliteDatabase`, `normalizeSqliteParams`                                                             |
-| `@crepuse/runtime/database/sqlite/d1` | Cloudflare D1 adapter         | `createD1Database`, `D1ResultLike`                                                                                                              |
+| Export Path                             | Description                   | Key Exports                                                                                                                                     |
+| :-------------------------------------- | :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `@crepuse/runtime`                      | Root export                   | Re-exports all public APIs from `errors` and `database`                                                                                         |
+| `@crepuse/runtime/errors`               | Error handling system         | `RuntimeError`, `RuntimeErrorOptions`                                                                                                           |
+| `@crepuse/runtime/database`             | Core database abstractions    | `CrepuseDatabase`, `CrepuseStatement`, `CrepuseResult`, `CrepuseExpectation`, `DatabaseErrorCode`, `validateExpectations`, `assertExpectations` |
+| `@crepuse/runtime/database/sqlite`      | SQLite extensions & utilities | `SqliteValue`, `SqliteBoundValue`, `CrepuseSqliteDatabase`, `normalizeSqliteParams`                                                             |
+| `@crepuse/runtime/database/sqlite/d1`   | Cloudflare D1 adapter         | `createD1Database`, `D1ResultLike`                                                                                                              |
+| `@crepuse/runtime/database/sqlite/node` | Node.js SQLite adapter        | `createNodeSqliteDatabase`                                                                                                                      |
 
 ---
 
